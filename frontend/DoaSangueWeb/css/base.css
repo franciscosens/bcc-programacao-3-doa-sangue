@@ -1,0 +1,23 @@
+.content-header {
+    min-height: 40px;
+}
+
+.content {
+    margin: 0 15px;
+}
+
+.display-none {
+    display: none;
+}
+
+.alert {
+    position: absolute;
+    z-index: 9999999;
+    width: 400px;
+    right: 30px;
+    top: 30px;
+}
+
+.pr-0{
+    padding-right: 0;
+}
