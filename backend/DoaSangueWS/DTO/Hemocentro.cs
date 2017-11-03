@@ -6,7 +6,7 @@ using System.Web;
 
 namespace DTO
 {
-    public class Hemocentro: Model
+    public class Hemocentro : Model
     {
 
         public string Nome { get; set; }
@@ -18,6 +18,12 @@ namespace DTO
         public string Numero { get; set; }
         public string CEP { get; set; }
         public string Complemento { get; set; }
-
+        public string EnderecoCompleto
+        {
+            get
+            {
+                return Estado + " - " + Cidade + " - " + Bairro + " - " + Logradouro + " - " + Numero;
+            }
+        }
     }
 }

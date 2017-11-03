@@ -53,41 +53,17 @@ $(function(){
 				"fatorRH"				: $("#doador-fator-rh").val()
 			},
 			success: function(data){
-                alertSuccess("Doador cadastrado com sucesso");
+                $.alertSuccess("Doador cadastrado com sucesso");
 			},
 			error: function(request, status, error){
 				if(request.status === 400){
-					console.log(request.responseText);
-					criarMensagensValidacao(request.responseText);
+					$.criarMensagensValidacao(request.responseText);
 				}
 			}
 		});
 	});
 
-	function criarMensagensValidacao($conteudo){
-		$conteudo = $conteudo.replaceAll("\"", "");
-        $conteudo = $conteudo.replaceAll("|", "<br />");
-		alertError($conteudo);
-	}
 
-	function alert($tipo, $texto){
-        $alertaClasse = ".alert-" + $tipo;
-        $($alertaClasse + " > .alert-descricao").html($texto);
-        $alerta = $($alertaClasse);
-        $alerta.slideDown(800).delay(500);
-        $alerta.delay(5000).slideUp(800);
-	}
 
-	function alertError($texto){
-		alert("danger", $texto);
-	}
 
-	function alertSuccess($texto) {
-		alert("success", $texto);
-    }
-
-    String.prototype.replaceAll = function (toReplace, replaceWith)
-    {
-        return this.split(toReplace).join(replaceWith);
-    }
 });

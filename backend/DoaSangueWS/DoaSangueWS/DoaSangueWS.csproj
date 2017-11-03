@@ -152,6 +152,7 @@
     <Compile Include="Controllers\DoacaoController.cs" />
     <Compile Include="Controllers\DoadorController.cs" />
     <Compile Include="Controllers\HemocentroController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IWSBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

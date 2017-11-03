@@ -1,27 +1,41 @@
 $(function () {
 
+    $botadLogin = $("#btn-login");
 
-    $("#btn-login").on("click", function () {
-        $(this).attr("disabled", "disabled");
+    $("#usuario-senha").keypress(function (e) {
+       if(e.which === 13){
+           $botadLogin.click();
+       }
+    });
+
+    $('input').attr('autocomplete', 'off');
+
+    $botadLogin.on("click", function () {
+        $botadLogin.attr("disabled", "disabled");
         $.ajax({
             url: "http://localhost:52378/usuario/login",
             type: "POST",
             data: {
-                "login" : $("#usuario-login").val(),
+                "login": $("#usuario-login").val(),
                 "senha": $("#usuario-senha").val()
             },
             success: function (data) {
-                sessionStorage.setItem("usuarioLogado", data);
-                sessionStorage.setItem("usuarioLogadoNome", data);
-                sessionStorage.setItem("usuarioLogadoSobrenome", data["sobrenome"]);
+                var resultado = JSON.parse(data);
+                sessionStorage.setItem("usuarioLogadoToken", resultado.token);
+                sessionStorage.setItem("usuarioLogadoNome", resultado.nome);
+                sessionStorage.setItem("usuarioLogadoSobrenome", resultado.sobrenome);
                 sessionStorage.setItem("usuarioLogadoLogin", $("#usuario-login").val());
-                console.log(data);
+                window.location.replace("index.html");
             },
-            error: function(request, status, error){
-                // if(request.status === 400){
+            error: function (request, status, error) {
+                if(request.status === 403) {
+                    $.alertError($.removerAspas(request.responseText));
+                    $botadLogin.removeAttr("disabled");
+                }
+                if (request.status === 400) {
                     console.log(request.responseText);
-                // }
+                }
             }
         });
-    })
+    });
 });

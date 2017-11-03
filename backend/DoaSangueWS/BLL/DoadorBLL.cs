@@ -45,7 +45,7 @@ namespace BLL
         {
             if (item.IdHemocentro <= 0)
                 AddError("Hemocentro deve ser informado.");
-            if (!new HemocentroDAL().ExistsById(item.IdHemocentro))
+            else if (!new HemocentroDAL().ExistsById(item.IdHemocentro))
                 AddError("Hemocentro informado não existe");
 
             if (string.IsNullOrWhiteSpace(item.Nome))

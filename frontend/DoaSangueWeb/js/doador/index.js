@@ -6,7 +6,7 @@ $(function () {
         url: "http://localhost:52378/doador",
         type: "get",
         success: function (data) {
-            $hemocentros = data;
+            $doadores = data;
             ft = FooTable.init(".table-doador", {
                 "paging": {
                     "enabled": true,
@@ -57,27 +57,21 @@ $(function () {
                         "title": "Data Nascimento",
                         "type": "string",
                         "formatter" : function formatter(value, option, rowData) {
-                            return formatarDataPadraoBR(value);
+                            return $.formatarDataPadraoBR(value);
                         },
                         "sortable": false
                     },
                     {
-                        "name": "Nome",
+                        "name": "Id",
                         "title": "Ações",
-                        "sortable": false
+                        "sortable": false,
+                        "formatter" : function formatter(value, option, rowData) {
+                            return '<a href="doador_editar.html?id=' + rowData.Id + '"><i class="fa fa-pencil"></i></a>';
+                        }
                     }
                 ],
-                "rows": $hemocentros
+                "rows": $doadores
             })
         }
     });
-
-
-    function formatarDataPadraoBR(data) {
-        var dataNascimentoServidor = new Date(data);
-        var dia = (dataNascimentoServidor.getDate() < 10 ? "0" : "") + dataNascimentoServidor.getDate();
-        var mes = (dataNascimentoServidor.getMonth() < 10 ? "0" : "") + dataNascimentoServidor.getMonth();
-        var ano = dataNascimentoServidor.getFullYear();
-        return dia + "/" + mes + "/" + ano;
-    }
 });

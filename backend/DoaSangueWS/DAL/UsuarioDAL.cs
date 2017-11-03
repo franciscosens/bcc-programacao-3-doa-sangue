@@ -95,6 +95,7 @@ namespace DTO
         {
             SqlCommand command = conexao.GetCommand();
             command.CommandText = "SELECT * FROM usuarios WHERE id = @ID";
+            command.Parameters.AddWithValue("@ID", id);
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
             DataRow row = table.Rows[0];

@@ -10,14 +10,15 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace DoaSangueWS.Controllers
 {
     public class UsuarioController : ApiController, IWSBase<Usuario>
     {
         UsuarioBLL usuarioBLL = new UsuarioBLL();
-
         private static Dictionary<string, string> usuariosLogados;
+
 
         static UsuarioController()
         {
@@ -47,25 +48,45 @@ namespace DoaSangueWS.Controllers
             Usuario usuario = usuarioBLL.VerifyLogin(login, senha);
             if (usuario != null)
             {
-                Dictionary<string, string> resultados = new Dictionary<string, string>();
-                resultados.Add("token", Utils.GenerateToken(login));
-                resultados.Add("nome", usuario.Nome);
-                resultados.Add("sobrenome", usuario.Sobrenome);
-                return Request.CreateResponse(HttpStatusCode.OK, resultados.ToString());
+                string token = Utils.GenerateToken(login);
+                if (!usuariosLogados.ContainsKey(token))
+                {
+                    usuariosLogados.Add(token, login);
+                }
+                Dictionary<string, string> resultados = new Dictionary<string, string>
+                {
+                    { "token", token },
+                    { "nome", usuario.Nome },
+                    { "sobrenome", usuario.Sobrenome }
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, JsonConvert.SerializeObject(resultados));
             }
-            return Request.CreateResponse(HttpStatusCode.Forbidden, "Login ou senha inválidos");
+            return Request.CreateResponse(HttpStatusCode.Forbidden, "Login e/ou senha inválidos.");
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("usuario/logout")]
-        public HttpResponseMessage RealizarLogout(string login)
+        public HttpResponseMessage RealizarLogout([FromBody]JObject data)
         {
-            if (usuariosLogados.ContainsKey(login))
+            string token = data["token"].ToString();
+            if (usuariosLogados.ContainsKey(token))
             {
-                usuariosLogados.Remove(login);
+                usuariosLogados.Remove(token);
                 return Request.CreateResponse(HttpStatusCode.OK, "Realizado o logout com sucesso.");
             }
-            return Request.CreateResponse(HttpStatusCode.BadRequest, "Usuário não logado");
+            return Request.CreateResponse(HttpStatusCode.BadRequest, "Usuário não logado.");
+        }
+
+        [HttpPost]
+        [Route("usuario/verificarLogin")]
+        public HttpResponseMessage VerificarLogado([FromBody]JObject data)
+        {
+            string token = data["token"].ToString();
+            if (usuariosLogados.ContainsKey(token))
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, "");
+            }
+            return Request.CreateResponse(HttpStatusCode.BadRequest, "Usuário não logado.");
         }
 
         [HttpGet]

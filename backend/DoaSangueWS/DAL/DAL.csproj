@@ -54,7 +54,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="estrutura.sql" />
+    <Content Include="Infraestrutura\estrutura.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
