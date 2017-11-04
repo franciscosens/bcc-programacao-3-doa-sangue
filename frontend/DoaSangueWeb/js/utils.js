@@ -26,6 +26,8 @@ $(function () {
         }
     });
 
+    $('input').attr('autocomplete', 'off');
+
     $.formatarDataPadraoBR = function (data) {
         var dataNascimentoServidor = new Date(data);
         var dia = (dataNascimentoServidor.getDate() < 10 ? "0" : "") + dataNascimentoServidor.getDate();
