@@ -38,7 +38,7 @@ $(function () {
                 "fatorRH": $("#doador-fator-rh").val()
             },
             success: function (data) {
-                $.alertSuccess("Doador cadastrado com sucesso");
+                window.location.replace("doador_editar.html?id=" + data);
             },
             error: function (request, status, error) {
                 if (request.status === 400) {

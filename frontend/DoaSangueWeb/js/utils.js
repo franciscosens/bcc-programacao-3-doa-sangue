@@ -20,7 +20,7 @@ $(function () {
             limparSessao();
             window.location.replace("login.html");
         }, success: function () {
-            $("#nome-usuario-logado").html($.nomeCompleto);
+            $("#nome-administrador-logado").html($.nomeCompleto);
             $('input,textarea').attr('autocomplete', 'off');
 
         }
@@ -31,12 +31,19 @@ $(function () {
     $.formatarDataPadraoBR = function (data) {
         var dataNascimentoServidor = new Date(data);
         var dia = (dataNascimentoServidor.getDate() < 10 ? "0" : "") + dataNascimentoServidor.getDate();
-        var mes = (dataNascimentoServidor.getMonth() < 10 ? "0" : "") + dataNascimentoServidor.getMonth();
+        var mes = (dataNascimentoServidor.getMonth() < 10 ? "0" : "") + (dataNascimentoServidor.getMonth() + 1);
         var ano = dataNascimentoServidor.getFullYear();
         return dia + "/" + mes + "/" + ano;
     };
 
-    $("#usuario-logout").on("click", function () {
+    $.formatarDataHoraPadraoBR = function (dataHora) {
+      dataHora = dataHora.split("T");
+      console.log(dataHora);
+
+      return $.formatarDataPadraoBR(dataHora[0]) + " " + dataHora[1];
+    };
+
+    $("#administrador-logout").on("click", function () {
         $.ajax({
             url: "http://localhost:52378/usuario/logout",
             type: "POST",
@@ -53,7 +60,15 @@ $(function () {
         });
     });
 
-
+    $.getParameterByName = function(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    };
 
     function limparSessao(){
         sessionStorage.removeItem("usuarioLogadoToken");

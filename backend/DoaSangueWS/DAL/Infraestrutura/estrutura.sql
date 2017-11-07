@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS usuarios;
-DROP TABLE IF EXISTS doacoes_perguntas;
 DROP TABLE IF EXISTS doacoes;
 DROP TABLE IF EXISTS perguntas;
 DROP TABLE IF EXISTS doadores;
@@ -50,20 +49,12 @@ CREATE TABLE doacoes(
 	id_doador INTEGER NOT NULL,
 	FOREIGN KEY(id_doador) REFERENCES doadores(id),
 
-	aceitavel BIT,
-	atendente VARCHAR(100),
-	litros FLOAT,
-	data DATE
-);
+	status INT NOT NULL,
+	atendente VARCHAR(100) NOT NULL,
+	litros FLOAT NOT NULL,
 
-CREATE TABLE doacoes_perguntas(
-	id INTEGER PRIMARY KEY IDENTITY(1, 1),
-	id_doacao INTEGER NOT NULL,
-	id_pergunta INTEGER NOT NULL,
-	FOREIGN KEY(id_doacao) REFERENCES doacoes(id),
-	FOREIGN KEY(id_pergunta) REFERENCES perguntas(id), 
-
-	resposta BIT NOT NULL
+	data_criacao DATETIME2 NOT NULL,
+	data_alteracao DATETIME2
 );
 
 CREATE TABLE usuarios(
@@ -110,3 +101,7 @@ VALUES
 (7, 'Julio', 'Fernandes', '1978-02-07 21:54:48', 1, 1, 90.600, 1.84, '2017-11-01 22:54:12'),
 (3, 'Diogo', 'Iago Moura', '1986-05-29 21:54:48', 4, 1, 73.000, 1.74, '2017-11-01 22:54:12'),
 (1, 'Bruna', 'Barros', '1990-10-05 21:54:48', 3, 0, 73.300, 1.78, '2017-11-01 22:54:12');
+
+INSERT INTO doacoes (id_doador, litros, atendente, status, data_criacao)
+VALUES
+(1, 0.320, 'Lucia da Silva', 3, '2016-05-21 20:15:24');

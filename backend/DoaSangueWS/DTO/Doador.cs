@@ -20,6 +20,8 @@ namespace DTO
         public Hemocentro Hemocentro { get; set; }
         public string TipoSanguineoFatorRH { get { return Enum.GetName(typeof(ETipoSanguineo), TipoSanguineo)+ (FatorRH ? "+" : "-"); } }
         public string NomeCompleto { get { return Nome + " " + Sobrenome; } }
+        public List<Doacao> Doacoes { get; set; }
+
     }
 
     public  enum ETipoSanguineo

@@ -35,7 +35,7 @@ namespace DoaSangueWS.Controllers
         [Route("doador/{id}")]
         public HttpResponseMessage GetById(int id)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, doadorBLL.GetById(id));
+            return Request.CreateResponse(HttpStatusCode.OK, doadorBLL.GetByIdComplete(id));
         }
 
         [HttpPost]
@@ -44,8 +44,8 @@ namespace DoaSangueWS.Controllers
         {
             try
             {
-                doadorBLL.Insert(item);
-                return Request.CreateResponse(HttpStatusCode.OK, "Doador incluido com sucesso");
+                int id = doadorBLL.Insert(item);
+                return Request.CreateResponse(HttpStatusCode.OK, id);
             }
             catch (Exception ex)
             {
@@ -54,7 +54,7 @@ namespace DoaSangueWS.Controllers
         }
 
         [HttpPut]
-        [Route("doador/{id}")]
+        [Route("doador")]
         public HttpResponseMessage Update([FromBody]Doador item)
         {
             try

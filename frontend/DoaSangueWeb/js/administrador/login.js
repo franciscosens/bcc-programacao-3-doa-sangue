@@ -2,7 +2,7 @@ $(function () {
 
     $botadLogin = $("#btn-login");
 
-    $("#usuario-senha").keypress(function (e) {
+    $("#administrador-senha").keypress(function (e) {
        if(e.which === 13){
            $botadLogin.click();
        }
@@ -24,7 +24,7 @@ $(function () {
                 sessionStorage.setItem("usuarioLogadoToken", resultado.token);
                 sessionStorage.setItem("usuarioLogadoNome", resultado.nome);
                 sessionStorage.setItem("usuarioLogadoSobrenome", resultado.sobrenome);
-                sessionStorage.setItem("usuarioLogadoLogin", $("#usuario-login").val());
+                sessionStorage.setItem("usuarioLogadoLogin", $("#administrador-login").val());
                 window.location.replace("index.html");
             },
             error: function (request, status, error) {

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL;
 
 namespace DTO
 {
@@ -46,7 +47,7 @@ namespace DTO
 
                 doador.Nome = (string)table.Rows[i]["nome"];
                 doador.Sobrenome = (string)table.Rows[i]["sobrenome"];
-                doador.TipoSanguineo = (DTO.ETipoSanguineo) Enum.ToObject(typeof(DTO.ETipoSanguineo), table.Rows[i]["tipo_sanguineo"]);
+                doador.TipoSanguineo = (DTO.ETipoSanguineo)Enum.ToObject(typeof(DTO.ETipoSanguineo), table.Rows[i]["tipo_sanguineo"]);
 
                 doador.Peso = (double)table.Rows[i]["peso"];
                 doador.Altura = (double)table.Rows[i]["altura"];
@@ -75,6 +76,13 @@ namespace DTO
             return table.Rows.Count == 1;
         }
 
+        public Doador GetByIdComplete(int id)
+        {
+            Doador doador = GetById(id);
+            doador.Doacoes = new DoacaoDAL().GetByDoadorId(doador.Id);
+            return doador;
+        }
+
         public Doador GetById(int id)
         {
             SqlCommand command = conexao.GetCommand();
@@ -83,15 +91,16 @@ namespace DTO
             Doador doador = new Doador();
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
+            conexao.Close();
             doador.Id = id;
             doador.IdHemocentro = (int)table.Rows[0]["id_hemocentro"];
             doador.Hemocentro = new HemocentroDAL().GetById(doador.IdHemocentro);
 
-            doador.Nome = (string) table.Rows[0]["nome"];
+            doador.Nome = (string)table.Rows[0]["nome"];
             doador.Sobrenome = (string)table.Rows[0]["sobrenome"];
             doador.TipoSanguineo = (DTO.ETipoSanguineo)Enum.ToObject(typeof(DTO.ETipoSanguineo), table.Rows[0]["tipo_sanguineo"]);
 
-            doador.Peso = (double) table.Rows[0]["peso"];
+            doador.Peso = (double)table.Rows[0]["peso"];
             doador.Altura = (double)table.Rows[0]["altura"]; ;
 
             doador.FatorRH = (bool)table.Rows[0]["fator_rh"];
@@ -99,7 +108,6 @@ namespace DTO
             doador.DataNascimento = (DateTime)table.Rows[0]["data_nascimento"];
             doador.DataCriacao = (DateTime)table.Rows[0]["data_criacao"];
             //doador.DataAlteracao = (DateTime)table.Rows[0]["data_alteracao"];
-            conexao.Close();
             return doador;
         }
 
@@ -107,6 +115,7 @@ namespace DTO
         {
             SqlCommand command = conexao.GetCommand();
             command.CommandText = @"INSERT INTO doadores (id_hemocentro, nome, sobrenome, tipo_sanguineo, peso, altura, fator_rh, data_nascimento, data_criacao) 
+                                        OUTPUT INSERTED.ID
                                         VALUES (@ID_HEMOCENTRO, @NOME, @SOBRENOME, @TIPO_SANGUINEO, @PESO, @ALTURA, @FATOR_RH, @DATA_NASCIMENTO, @DATA_CRIACAO)";
             command.Parameters.AddWithValue("@ID_HEMOCENTRO", item.IdHemocentro);
             command.Parameters.AddWithValue("@NOME", item.Nome);
@@ -118,7 +127,8 @@ namespace DTO
 
             command.Parameters.AddWithValue("@DATA_NASCIMENTO", item.DataNascimento.Date);
             command.Parameters.AddWithValue("@DATA_CRIACAO", DateTime.Now);
-            return command.ExecuteNonQuery();
+            int id = (int)command.ExecuteScalar();
+            return id;
         }
 
         public int Update(Doador item)

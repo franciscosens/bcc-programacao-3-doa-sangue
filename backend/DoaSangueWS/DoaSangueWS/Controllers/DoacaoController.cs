@@ -3,49 +3,67 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 
 namespace DoaSangueWS.Controllers
 {
-    public class DoacaoController: IWSBase<Hemocentro>
+    public class DoacaoController : ApiController
     {
-        HemocentroBLL hemocentroBLL = new HemocentroBLL();
+        DoacaoBLL doacaoBLL = new DoacaoBLL();
 
         [HttpDelete]
-        [Route("")]
+        [Route("doacao/{id}")]
         public HttpResponseMessage Delete(int id)
         {
-            throw new NotImplementedException();
+            doacaoBLL.Delete(id);
+            return Request.CreateResponse(HttpStatusCode.OK, "Deletado com sucesso");
         }
 
         [HttpGet]
-        [Route("hemocentro")]
+        [Route("doacao")]
         public HttpResponseMessage GetAll()
         {
-            throw new NotImplementedException();
+            return Request.CreateResponse(HttpStatusCode.OK, doacaoBLL.GetAll());
         }
 
         [HttpGet]
-        [Route("hemocentro/{id}")]
+        [Route("doacao/{id}")]
         public HttpResponseMessage GetById(int id)
         {
-            throw new NotImplementedException();
+            return Request.CreateResponse(HttpStatusCode.OK, doacaoBLL.GetById(id));
         }
 
         [HttpPost]
-        [Route("hemocentro")]
-        public HttpResponseMessage Insert([FromBody] Hemocentro item)
+        [Route("doacao")]
+        public HttpResponseMessage Insert([FromBody] Doacao item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                doacaoBLL.Insert(item);
+                return Request.CreateResponse(HttpStatusCode.OK, "Doação incluida com sucesso");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
         [HttpPut]
-        [Route("hemocentro/{id}")]
-        public HttpResponseMessage Update([FromBody]Hemocentro item)
+        [Route("doacao/{id}")]
+        public HttpResponseMessage Update([FromBody]Doacao item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                doacaoBLL.Update(item);
+                return Request.CreateResponse(HttpStatusCode.OK, "Daoção alterada com sucesso");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
         }
 
     }

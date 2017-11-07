@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseValidator.cs" />
+    <Compile Include="DoacaoBLL.cs" />
     <Compile Include="DoadorBLL.cs" />
     <Compile Include="HemocentroBLL.cs" />
     <Compile Include="ICRUDBase.cs" />

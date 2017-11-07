@@ -83,6 +83,11 @@ namespace BLL
             return base.HasErrors();
         }
 
+        public object GetByIdComplete(int id)
+        {
+            return doadorDAL.GetByIdComplete(id);
+        }
+
         public override bool IsValidUpdate(Doador item)
         {
             if (item.Id <= 0)

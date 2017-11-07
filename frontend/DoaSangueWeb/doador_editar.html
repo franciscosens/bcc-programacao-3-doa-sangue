@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DoaSangue - Hemocentro Cadastro</title>
+    <title>DoaSangue - Doador Editar</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -13,10 +13,12 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="assets/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
+    <link rel="stylesheet" href="assets/footable/css/footable.bootstrap.min.css">
     <link rel="stylesheet" href="base/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="base/css/skins/skin-red.min.css">
+
 
     <link rel="stylesheet" href="css/base.css">
 
@@ -70,8 +72,8 @@
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header"></li>
-                <li class="active"><a href="hemocentro.html"><i class="fa fa-university"></i> <span>Hemocentros</span></a></li>
-                <li><a href="doador.html"><i class="fa fa-users"></i> <span>Doadores</span></a></li>
+                <li><a href="hemocentro.html"><i class="fa fa-university"></i> <span>Hemocentros</span></a></li>
+                <li class="active"><a href="doador.html"><i class="fa fa-users"></i> <span>Doadores</span></a></li>
                 <li><a href="doacao.html"><i class="fa fa-dot-circle-o"></i> <span>Doações</span></a></li>
                 <li><a href="administrador.html"><i class="fa fa-user"></i> <span>Administradores</span></a></li>
             </ul>
@@ -85,7 +87,7 @@
         <section class="content-header">
             <ol class="breadcrumb ml-10">
                 <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="hemocentro.html"> Hemocentros</a></li>
+                <li><a href="doador.html"> Doadores</a></li>
                 <li class="active"><a href="doador_cadastro.html"> Cadastro</a></li>
             </ol>
         </section>
@@ -95,80 +97,89 @@
                 <div class="col-md-6 p-0">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Cadastro de Hemocentro</h3>
+                            <h3 class="box-title">Edição de Doador</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
                         <form role="form">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="hemocentro-nome">Nome</label>
-                                    <input type="text" class="form-control" id="hemocentro-nome" name="hemocentro-nome">
+                                    <label for="doador-nome">Nome</label>
+                                    <input type="text" class="form-control" id="doador-nome" name="doador-nome">
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-descricao">Descrição</label>
-                                    <textarea class="form-control col-md-12" name="hemocentro-descricao" id="hemocentro-descricao"></textarea>
+                                    <label for="doador-sobrenome">Sobrenome</label>
+                                    <input type="text" class="form-control" id="doador-sobrenome" name="doador-sobrenome">
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-cep">CEP</label>
-                                    <input type="text" class="form-control cep cep-mask" id="hemocentro-cep" name="hemocentro-cep">
-                                </div>
-                                <div class="form-group">
-                                    <label for="hemocentro-estado">Estado</label>
-                                    <select name="hemocentro-estado" class="form-control" id="hemocentro-estado">
-                                        <option disabled="disabled" selected="selected"></option>
-                                        <option value="AC">AC - Acre</option>
-                                        <option value="AL">AL - Alagoas</option>
-                                        <option value="AP">AP - Amapá</option>
-                                        <option value="AM">AM - Amazonas</option>
-                                        <option value="BA">BA - Bahia</option>
-                                        <option value="CE">CE - Ceará</option>
-                                        <option value="DF">DF - Distrito Federal</option>
-                                        <option value="ES">ES - Espírito Santo</option>
-                                        <option value="GO">GO - Goiás</option>
-                                        <option value="MA">MA - Maranhão</option>
-                                        <option value="MT">MT - Mato Grosso</option>
-                                        <option value="MS">MS - Mato Grosso do Sul</option>
-                                        <option value="MG">MG - Minas Gerais</option>
-                                        <option value="PA">PA - Pará</option>
-                                        <option value="PB">PB - Paraíba</option>
-                                        <option value="PR">PR - Paraná</option>
-                                        <option value="PE">PE - Pernambuco</option>
-                                        <option value="PI">PI - Piauí</option>
-                                        <option value="RJ">RJ - Rio de Janeiro</option>
-                                        <option value="RN">RN - Rio Grande do Norte</option>
-                                        <option value="RS">RS - Rio Grande do Sul</option>
-                                        <option value="RO">RO - Rondônia</option>
-                                        <option value="RR">RR - Roraima</option>
-                                        <option value="SC">SC - Santa Catarina</option>
-                                        <option value="SP">SP - São Paulo</option>
-                                        <option value="SE">SE - Sergipe</option>
-                                        <option value="TO">TO - Tocantins</option>
+                                    <label for="doador-hemocentro">Hemocentro</label>
+                                    <select name="doador-hemocentro" class="form-control" id="doador-hemocentro">
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-cidade">Cidade</label>
-                                    <input type="text" class="form-control" id="hemocentro-cidade" name="hemocentro-cidade">
+                                    <label for="doador-tipo-sanguineo">Tipo Sanguíneo</label>
+                                    <select name="doador-tipo-sanguineo" class="form-control" id="doador-tipo-sanguineo">
+                                        <option disabled="disabled" selected="selected"></option>
+                                        <option value="1">A</option>
+                                        <option value="2">B</option>
+                                        <option value="3">AB</option>
+                                        <option value="4">O</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-bairro">Bairro</label>
-                                    <input type="text" class="form-control" id="hemocentro-bairro" name="hemocentro-bairro">
+                                    <label for="doador-fator-rh">Fator RH</label>
+                                    <select name="doador-fator-rh" class="form-control" id="doador-fator-rh">
+                                        <option disabled="disabled" selected="selected"></option>
+                                        <option value="true">Positivo</option>
+                                        <option value="false">Negativo</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-logradouro">Logradouro</label>
-                                    <input type="text" class="form-control" id="hemocentro-logradouro"
-                                           name="hemocentro-logradouro">
+                                    <label for="doador-data-nascimento">Data de Nascimento:</label>
+                                    <div class="input-group">
+                                          <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                          </div>
+                                          <input type="text" class="form-control data-nascimento"  id="doador-data-nascimento" name="doador-data-nascimento">
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-numero">Numero</label>
-                                    <input type="text" class="form-control" id="hemocentro-numero" name="hemocentro-numero">
+                                    <label for="doador-peso">Peso</label>
+                                    <input type="text" class="form-control" id="doador-peso" name="doador-peso">
+                                </div>
+                                <div class="form-group">
+                                    <label for="doador-altura">Altura</label>
+                                    <input type="text" class="form-control" id="doador-altura" name="doador-altura">
                                 </div>
                             </div>
+                            <!-- /.box-body -->
+
                             <div class="box-footer">
-                                <button type="button" class="btn btn-danger col-lg-2">Cancelar</button>
-                                <button type="submit" class="btn btn-primary col-lg-2 col-lg-offset-2">Cadastrar</button>
+                                <a href="#" class="btn btn-success col-lg-3"><i class="fa fa-arrow-left"></i> Voltar</a>
+                                <a href="#" id="doador-excluir" class="btn btn-danger col-lg-3 col-lg-offset-1"><i class="fa fa-trash"></i> Excluír</a>
+                                <a href="#" id="doador-cadastro" class="btn btn-primary col-lg-3 col-lg-offset-1"><i class="fa fa-floppy-o"></i> Cadastrar</a>
                             </div>
                         </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title col-md-8">Lista de Doações</h3>
+
+                        </div>
+                        <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-6 col-sm-offset-6 col-lg-5 col-lg-offset-7 col-md-offset-10">
+                                <a href="#" class="btn btn-block btn-primary"><i class="fa fa-plus"></i> Nova Doação</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-doacoes"></table>
+                            </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,8 +224,10 @@
 <script src="assets/input-mask/jquery.inputmask.js"></script>
 <script src="assets/input-mask/jquery.inputmask.date.extensions.js"></script>
 <script src="assets/input-mask/jquery.inputmask.extensions.js"></script>
+<script src="assets/momentjs/moment.js"></script>
+<script src="assets/footable/js/footable.min.js"></script>
 <script src="base/js/adminlte.min.js"></script>
-<script src="js/hemocentro/cadastro.js"></script>
+<script src="js/doador/editar.js"></script>
 
 </body>
 </html>

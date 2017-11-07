@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoacaoDAL.cs" />
     <Compile Include="DoadorDAL.cs" />
     <Compile Include="HemocentroDAL.cs" />
     <Compile Include="Infraestrutura\Conexao.cs" />
