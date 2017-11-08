@@ -16,3 +16,9 @@ C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DTO\obj\Debug\DTO.csp
 C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DTO\obj\Debug\DTO.dll
 C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DTO\obj\Debug\DTO.pdb
+C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DTO\bin\Debug\DTO.dll
+C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DTO\bin\Debug\DTO.pdb
+C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DTO\obj\Debug\DTO.dll
+C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DTO\obj\Debug\DTO.pdb

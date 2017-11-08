@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DoaSangue - Administradores</title>
+    <title>DoaSangue - Cadastro Administrador</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -13,8 +13,6 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="assets/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="assets/footable/css/footable.bootstrap.min.css">
-
     <link rel="stylesheet" href="base/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
@@ -87,27 +85,77 @@
         <section class="content-header">
             <ol class="breadcrumb ml-10">
                 <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active"><a href="doador.html"> Administradores</a></li>
+                <li><a href="administrador.html"> Administradores</a></li>
+                <li class="active"><a href="administrador_cadastro.html"> Cadastro</a></li>
             </ol>
         </section>
         <!-- Main content -->
         <section class="content">
             <div class="row">
-
-                <div class="box">
+                <div class="col-md-6 p-0">
+                    <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Lista de Administradores</h3>
-                        <div class="col-md-2 col-lg-2 pull-right pr-0">
-                            <a href="admin_cadastro.html" class="btn btn-block btn-primary">Novo Administrador</a>
-                        </div>
+                        <h3 class="box-title">Cadastro de Administrador</h3>
                     </div>
                     <!-- /.box-header -->
-                    <div class="box-body">
-                        <table class="table table-admin">
-                        </table>
-                    </div>
+                    <!-- form start -->
+                    <form role="form">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="doador-nome">Nome <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control validacao" data-nome="Nome" id="doador-nome" name="doador-nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="doador-sobrenome">Sobrenome <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control validacao" data-nome="Sobrenome" id="doador-sobrenome" name="doador-sobrenome">
+                            </div>
+                            <div class="form-group">
+                                <label for="doador-tipo-sanguineo">Tipo Sanguíneo <span class="text-danger">*</span></label>
+                                <select name="doador-tipo-sanguineo" class="form-control validacao" data-nome="Tipo Sanguíneo" id="doador-tipo-sanguineo">
+                                    <option disabled="disabled" selected="selected"></option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">AB</option>
+                                    <option value="4">O</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="doador-fator-rh">Fator RH <span class="text-danger">*</span></label>
+                                <select name="doador-fator-rh" class="form-control validacao" data-nome="Fator RH" id="doador-fator-rh">
+                                    <option disabled="disabled" selected="selected"></option>
+                                    <option value="true">Positivo</option>
+                                    <option value="false">Negativo</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="doador-data-nascimento">Data de Nascimento <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                      <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                      </div>
+                                      <input type="text" class="form-control data-nascimento validacao" data-nome="Data Nascimento" id="doador-data-nascimento" name="doador-data-nascimento">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="doador-peso">Peso <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control validacao" data-nome="Peso" id="doador-peso" name="doador-peso">
+                            </div>
+                            <div class="form-group">
+                                <label for="doador-altura">Altura <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control validacao" data-nome="Altura" id="doador-altura" name="doador-altura">
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+
+                        <div class="box-footer">
+                            <button type="button" class="btn btn-danger col-lg-2">Cancelar</button>
+                            <button type="button" id="administrador-cadastro" class="btn btn-primary col-lg-2 col-lg-offset-2">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
                 </div>
             </div>
+
         </section>
 
     </div>
@@ -120,12 +168,7 @@
         <strong>Programação III.</strong> BCC Furb - 2017/2.
     </footer>
 
-    <!-- Control Sidebar -->
 
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
     <div class="alert alert-danger alert-dismissible display-none">
         <h4 class="alert-titulo"><i class="icon fa fa-info"></i>Aviso</h4>
         <p class="alert-descricao"></p>
@@ -144,22 +187,17 @@
     </div>
 
 </div>
-<!-- ./wrapper -->
 
-<!-- jQuery 3 -->
 <script src="assets/jquery/dist/jquery.min.js"></script>
 <script src="js/utils.js"></script>
-<!-- jQuery UI 1.11.4 -->
+<script src="js/alert.js"></script>
 <script src="assets/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<!-- Bootstrap 3.3.7 -->
 <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="assets/momentjs/moment.js"></script>
-<script src="assets/footable/js/footable.min.js"></script>
-
-<!-- AdminLTE App -->
+<script src="assets/input-mask/jquery.inputmask.js"></script>
+<script src="assets/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="assets/input-mask/jquery.inputmask.extensions.js"></script>
 <script src="base/js/adminlte.min.js"></script>
-<script src="js/administrador/index.js"></script>
+<script src="js/administrador/cadastro.js"></script>
 
 </body>
 </html>

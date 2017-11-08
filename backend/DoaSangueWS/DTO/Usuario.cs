@@ -10,6 +10,7 @@ namespace DTO
     {
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
+        public string NomeCompleto { get { return Nome + " " + Sobrenome; } }
         public string Login { get; set; }
         public string Senha { get; set; }
         public DateTime DataNascimento { get; set; }
