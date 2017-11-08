@@ -65,8 +65,11 @@ $(function () {
                         "sortable": false
                     },
                     {
-                        "title": "Litros",
-                        "name": "Litros"
+                        "title": "Quantidade",
+                        "name": "Quantidade",
+                        "formatter": function formatter(value, option, rowData) {
+                            return value + " ml";
+                        }
                     },
                     {
                         "title": "Atendente",
@@ -87,6 +90,10 @@ $(function () {
 
 
     $("#doador-cadastro").on("click", function () {
+
+        if(!$.validacaoFormulario()){
+            return;
+        }
 
         // TODO validações dos campos antes de submitar o form
         $.ajax({
@@ -112,6 +119,30 @@ $(function () {
                 }
             }
         });
+    });
+
+    $("#doacao-cadastrar").on("click", function () {
+        $campoQuantidade = $("#doacao-quantidade");
+        $campoAtendente = $("#doacao-atendente");
+        // TODO validações dos campos antes de submitar o form
+        $.ajax({
+            url: "http://localhost:52378/doacao",
+            type: "POST",
+            data : {
+                "idDoador": $id,
+                "quantidade": $campoQuantidade.val(),
+                "atendente": $campoAtendente.val()
+            },
+            success: function(data){
+                window.location.replace("doador_editar.html?id=" + $id);
+            },
+            error: function(request, status, error){
+                if(request.status === 400){
+                    $.criarMensagensValidacao(request.responseText);
+                }
+            }
+        })
+
     });
 
 

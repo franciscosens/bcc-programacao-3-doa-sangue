@@ -51,7 +51,7 @@ CREATE TABLE doacoes(
 
 	status INT NOT NULL,
 	atendente VARCHAR(100) NOT NULL,
-	litros FLOAT NOT NULL,
+	quantidade INT NOT NULL,
 
 	data_criacao DATETIME2 NOT NULL,
 	data_alteracao DATETIME2
@@ -102,6 +102,6 @@ VALUES
 (3, 'Diogo', 'Iago Moura', '1986-05-29 21:54:48', 4, 1, 73.000, 1.74, '2017-11-01 22:54:12'),
 (1, 'Bruna', 'Barros', '1990-10-05 21:54:48', 3, 0, 73.300, 1.78, '2017-11-01 22:54:12');
 
-INSERT INTO doacoes (id_doador, litros, atendente, status, data_criacao)
+INSERT INTO doacoes (id_doador, quantidade, atendente, status, data_criacao)
 VALUES
-(1, 0.320, 'Lucia da Silva', 3, '2016-05-21 20:15:24');
+(1, 320, 'Lucia da Silva', 3, '2016-05-21 20:15:24');

@@ -40,13 +40,13 @@ namespace DAL
             {
                 doacoes.Add(new Doacao()
                 {
-                    Id = (int)table.Rows[0]["id"],
-                    Atendente = (string)table.Rows[0]["atendente"],
-                    Litros = Convert.ToDouble(table.Rows[0]["litros"]),
-                    IdDoador = (int)table.Rows[0]["id_doador"],
-                    Doador = new DoadorDAL().GetById((int)table.Rows[0]["id_doador"]),
-                    Status = (EStatusDoacao)Enum.ToObject(typeof(EStatusDoacao), table.Rows[0]["status"]),
-                    DataCriacao = (DateTime)table.Rows[0]["data_criacao"]
+                    Id = (int)table.Rows[i]["id"],
+                    Atendente = (string)table.Rows[i]["atendente"],
+                    Quantidade = (int)table.Rows[i]["quantidade"],
+                    IdDoador = (int)table.Rows[i]["id_doador"],
+                    Doador = new DoadorDAL().GetById((int)table.Rows[i]["id_doador"]),
+                    Status = (EStatusDoacao)Enum.ToObject(typeof(EStatusDoacao), table.Rows[i]["status"]),
+                    DataCriacao = (DateTime)table.Rows[i]["data_criacao"]
                 });
             }
             return doacoes;
@@ -65,7 +65,7 @@ namespace DAL
             {
                 Id = (int)table.Rows[0]["id"],
                 Atendente = (string)table.Rows[0]["atendente"],
-                Litros = Convert.ToDouble(table.Rows[0]["litros"]),
+                Quantidade = (int)table.Rows[0]["litros"],
                 IdDoador = (int)table.Rows[0]["id_doador"],
                 Doador = new DoadorDAL().GetById((int)table.Rows[0]["id_doador"]),
                 Status = (EStatusDoacao)Enum.ToObject(typeof(EStatusDoacao), table.Rows[0]["status"]),
@@ -76,15 +76,15 @@ namespace DAL
         public int Insert(Doacao item)
         {
             SqlCommand command = conexao.GetCommand();
-            command.CommandText = @"INSERT INTO doacoes (id_doador, litros, atendente, status, data_criacao)
-                                    VALUES
-                                    (@ID_DOADOR, @LITROS, @ATENDETE, @STATUS, @DATA_CRIACAO)";
+            command.CommandText = @"INSERT INTO doacoes (id_doador, quantidade, atendente, status, data_criacao)
+                                    OUTPUT INSERTED.ID
+                                    VALUES (@ID_DOADOR, @QUANTIDADE, @ATENDETE, @STATUS, @DATA_CRIACAO)";
             command.Parameters.AddWithValue("@ID_DOADOR", item.IdDoador);
-            command.Parameters.AddWithValue("@LITROS", item.Litros);
+            command.Parameters.AddWithValue("@QUANTIDADE", item.Quantidade);
             command.Parameters.AddWithValue("@ATENDETE", item.Atendente);
             command.Parameters.AddWithValue("@STATUS", EStatusDoacao.AGUARDANDO_ANALISE);
             command.Parameters.AddWithValue("@DATA_CRIACAO", DateTime.Now);
-            return command.ExecuteNonQuery();
+            return (int)command.ExecuteScalar();
         }
 
         public int Update(Doacao item)
@@ -110,13 +110,13 @@ namespace DAL
             {
                 doacoes.Add(new Doacao()
                 {
-                    Id = (int)table.Rows[0]["id"],
-                    Atendente = (string)table.Rows[0]["atendente"],
-                    Litros = Convert.ToDouble(table.Rows[0]["litros"]),
-                    IdDoador = (int)table.Rows[0]["id_doador"],
-                    Doador = new DoadorDAL().GetById((int)table.Rows[0]["id_doador"]),
-                    Status = (EStatusDoacao)Enum.ToObject(typeof(EStatusDoacao), table.Rows[0]["status"]),
-                    DataCriacao = (DateTime)table.Rows[0]["data_criacao"]
+                    Id = (int)table.Rows[i]["id"],
+                    Atendente = (string)table.Rows[i]["atendente"],
+                    Quantidade = (int)table.Rows[i]["quantidade"],
+                    IdDoador = (int)table.Rows[i]["id_doador"],
+                    Doador = new DoadorDAL().GetById((int)table.Rows[i]["id_doador"]),
+                    Status = (EStatusDoacao)Enum.ToObject(typeof(EStatusDoacao), table.Rows[i]["status"]),
+                    DataCriacao = (DateTime)table.Rows[i]["data_criacao"]
                 });
             }
             return doacoes;

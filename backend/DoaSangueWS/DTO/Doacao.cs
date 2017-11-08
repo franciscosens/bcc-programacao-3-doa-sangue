@@ -10,7 +10,7 @@ namespace DTO
     {
         public int IdDoador { get; set; }
         public Doador Doador { get; set; }
-        public double Litros { get; set; }
+        public int Quantidade { get; set; }
         public EStatusDoacao Status { get; set; }
         public string Atendente { get; set; }
         public string StatusExtenso

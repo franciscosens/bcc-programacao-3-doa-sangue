@@ -36,8 +36,8 @@ namespace DoaSangueWS.Controllers
         {
             try
             {
-                hemocentroBLL.Insert(item);
-                return Request.CreateResponse(HttpStatusCode.OK, "Hemocentro incluido com sucesso");
+             
+                return Request.CreateResponse(HttpStatusCode.OK, hemocentroBLL.Insert(item));
             }
             catch (Exception ex)
             {
@@ -46,7 +46,7 @@ namespace DoaSangueWS.Controllers
         }
 
         [HttpPut]
-        [Route("hemocentro/{id}")]
+        [Route("hemocentro/teste")]
         public HttpResponseMessage Update([FromBody]Hemocentro item)
         {
             try

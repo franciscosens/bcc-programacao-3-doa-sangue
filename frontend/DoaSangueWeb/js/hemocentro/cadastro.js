@@ -49,4 +49,32 @@ $(function () {
 
     $('.cep-mask').inputmask('99999-999');
 
+    $("#hemocentro-cadastro").on("click", function () {
+        if (!$.validacaoFormulario()) {
+            return;
+        }
+        $.ajax({
+            url: "http://localhost:52378/hemocentro",
+            type: "POST",
+            data: {
+                "estado": $($campoEstado).val(),
+                "cidade": $($campoCidade).val(),
+                "bairro": $($campoBairro).val(),
+                "logradouro": $($campoLogradouro).val(),
+                "numero": $($campoNumero).val(),
+                "nome": $($campoNome).val(),
+                "descricao": $($campoDescricao).val(),
+                "cep": $($campoCEP).val()
+            },
+            success: function (data) {
+                window.location.replace("hemocentro_editar.html?id=" + data);
+            },
+            error: function (request, status, error) {
+                if (request.status === 400) {
+                    $.criarMensagensValidacao(request.responseText);
+                }
+            }
+        });
+    });
+
 });

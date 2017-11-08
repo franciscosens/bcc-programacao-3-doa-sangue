@@ -1,11 +1,11 @@
 $(function () {
-    $.login = sessionStorage.getItem("usuarioLogadoLogin");
-    $.nome =  sessionStorage.getItem("usuarioLogadoNome");
-    $.sobrenome = sessionStorage.getItem("usuarioLogadoSobrenome");
-    $.token = sessionStorage.getItem("usuarioLogadoToken");
+    $.login = localStorage.getItem("usuarioLogadoLogin");
+    $.nome =  localStorage.getItem("usuarioLogadoNome");
+    $.sobrenome = localStorage.getItem("usuarioLogadoSobrenome");
+    $.token = localStorage.getItem("usuarioLogadoToken");
     $.nomeCompleto = $.nome + " " + $.sobrenome;
 
-    if(sessionStorage.getItem("usuarioLogadoToken") === null){
+    if(localStorage.getItem("usuarioLogadoToken") === null){
         window.location.replace("login.html");
     }
 
@@ -71,9 +71,28 @@ $(function () {
     };
 
     function limparSessao(){
-        sessionStorage.removeItem("usuarioLogadoToken");
-        sessionStorage.removeItem("usuarioLogadoNome");
-        sessionStorage.removeItem("usuarioLogadoSobrenome");
-        sessionStorage.removeItem("usuarioLogadoLogin");
+        localStorage.removeItem("usuarioLogadoToken");
+        localStorage.removeItem("usuarioLogadoNome");
+        localStorage.removeItem("usuarioLogadoSobrenome");
+        localStorage.removeItem("usuarioLogadoLogin");
+    }
+
+    $.validacaoFormulario = function(){
+        $campos = $(".validacao");
+        var texto = "";
+        $campos.each(function (){
+            if($(this).val() === null || $(this).val() === ""){
+                texto += $(this).data("nome");
+                if($(this).is("input")) {
+                    texto += " deve ser informado(a).<br/>";
+                }else if($(this).is("select")){
+                    texto += " deve ser selecionado(a).<br/>";
+                }else if($(this).is("textarea")){
+                    texto += " deve ser preenchido(a).<br/>";
+                }
+            }
+        });
+        $.alertError(texto);
+        return texto === "";
     }
 });

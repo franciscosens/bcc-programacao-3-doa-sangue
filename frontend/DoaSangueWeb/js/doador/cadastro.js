@@ -1,9 +1,18 @@
 $(function () {
 
+    $id = $.getParameterByName("id", window.location);
+    $hemocentro = $("#doador-hemocentro");
+    $nome = ("#doador-nome");
+    $sobrenome = ("#doador-sobrenome");
+    $peso = ("#doador-peso");
+    $altura = ("#doador-altura");
+    $dataNascimento = ("#doador-data-nascimento");
+    $tipoSanguineo = ("#doador-tipo-sanguineo");
+    $fatorRH = ("#doador-fator-rh");
+
     //Datemask dd/mm/yyyy
     $('.data-nascimento').inputmask('dd/mm/yyyy', {'placeholder': 'dd/mm/aaaa'});
 
-    $hemocentro = $("#doador-hemocentro");
     $hemocentro.attr("disabled", "disable");
     $.ajax({
         url: "http://localhost:52378/hemocentro",
@@ -22,20 +31,22 @@ $(function () {
     });
 
     $("#doador-cadastro").on("click", function () {
+       if(!$.validacaoFormulario()){
+            return;
+        }
 
-        // TODO validações dos campos antes de submitar o form
         $.ajax({
             url: "http://localhost:52378/doador",
             type: "POST",
             data: {
-                "idHemocentro": $("#doador-hemocentro").val(),
-                "nome": $("#doador-nome").val(),
-                "sobrenome": $("#doador-sobrenome").val(),
-                "peso": $("#doador-peso").val(),
-                "altura": $("#doador-altura").val(),
-                "dataNascimento": $("#doador-data-nascimento").val(),
-                "tipoSanguineo": $("#doador-tipo-sanguineo").val(),
-                "fatorRH": $("#doador-fator-rh").val()
+                "idHemocentro": $($hemocentro).val(),
+                "nome": $($nome).val(),
+                "sobrenome": $($sobrenome).val(),
+                "peso": $($peso).val(),
+                "altura": $($altura).val(),
+                "dataNascimento": $($dataNascimento).val(),
+                "tipoSanguineo": $($tipoSanguineo).val(),
+                "fatorRH": $($fatorRH).val()
             },
             success: function (data) {
                 window.location.replace("doador_editar.html?id=" + data);
@@ -47,6 +58,5 @@ $(function () {
             }
         });
     });
-
 
 });

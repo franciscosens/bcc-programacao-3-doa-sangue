@@ -21,10 +21,10 @@ $(function () {
             },
             success: function (data) {
                 var resultado = JSON.parse(data);
-                sessionStorage.setItem("usuarioLogadoToken", resultado.token);
-                sessionStorage.setItem("usuarioLogadoNome", resultado.nome);
-                sessionStorage.setItem("usuarioLogadoSobrenome", resultado.sobrenome);
-                sessionStorage.setItem("usuarioLogadoLogin", $("#administrador-login").val());
+                localStorage.setItem("usuarioLogadoToken", resultado.token);
+                localStorage.setItem("usuarioLogadoNome", resultado.nome);
+                localStorage.setItem("usuarioLogadoSobrenome", resultado.sobrenome);
+                localStorage.setItem("usuarioLogadoLogin", $("#administrador-login").val());
                 window.location.replace("index.html");
             },
             error: function (request, status, error) {

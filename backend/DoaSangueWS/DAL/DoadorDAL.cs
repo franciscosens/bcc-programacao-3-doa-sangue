@@ -127,8 +127,7 @@ namespace DTO
 
             command.Parameters.AddWithValue("@DATA_NASCIMENTO", item.DataNascimento.Date);
             command.Parameters.AddWithValue("@DATA_CRIACAO", DateTime.Now);
-            int id = (int)command.ExecuteScalar();
-            return id;
+            return (int)command.ExecuteScalar();
         }
 
         public int Update(Doador item)

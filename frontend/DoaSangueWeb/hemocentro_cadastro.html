@@ -102,20 +102,20 @@
                         <form role="form">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="hemocentro-nome">Nome</label>
-                                    <input type="text" class="form-control" id="hemocentro-nome" name="hemocentro-nome">
+                                    <label for="hemocentro-nome">Nome <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control validacao" data-nome="Nome" id="hemocentro-nome" name="hemocentro-nome">
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-descricao">Descrição</label>
-                                    <textarea class="form-control col-md-12" name="hemocentro-descricao" id="hemocentro-descricao"></textarea>
+                                    <label for="hemocentro-descricao">Descrição <span class="text-danger">*</span></label>
+                                    <textarea class="form-control col-md-12 validacao" data-nome="Descrição" name="hemocentro-descricao" id="hemocentro-descricao"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-cep">CEP</label>
-                                    <input type="text" class="form-control cep cep-mask" id="hemocentro-cep" name="hemocentro-cep">
+                                    <label for="hemocentro-cep">CEP <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control cep cep-mask validacao" data-nome="CEP" id="hemocentro-cep" name="hemocentro-cep">
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-estado">Estado</label>
-                                    <select name="hemocentro-estado" class="form-control" id="hemocentro-estado">
+                                    <label for="hemocentro-estado">Estado <span class="text-danger">*</span></label>
+                                    <select class="form-control validacao" data-nome="Estado" name="hemocentro-estado" id="hemocentro-estado">
                                         <option disabled="disabled" selected="selected"></option>
                                         <option value="AC">AC - Acre</option>
                                         <option value="AL">AL - Alagoas</option>
@@ -147,26 +147,25 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-cidade">Cidade</label>
-                                    <input type="text" class="form-control" id="hemocentro-cidade" name="hemocentro-cidade">
+                                    <label for="hemocentro-cidade">Cidade <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control validacao" data-nome="Cidade" id="hemocentro-cidade" name="hemocentro-cidade">
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-bairro">Bairro</label>
-                                    <input type="text" class="form-control" id="hemocentro-bairro" name="hemocentro-bairro">
+                                    <label for="hemocentro-bairro">Bairro <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control validacao" data-nome="Bairro" id="hemocentro-bairro" name="hemocentro-bairro">
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-logradouro">Logradouro</label>
-                                    <input type="text" class="form-control" id="hemocentro-logradouro"
-                                           name="hemocentro-logradouro">
+                                    <label for="hemocentro-logradouro">Logradouro <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control validacao" data-nome="Logradouro" id="hemocentro-logradouro" name="hemocentro-logradouro">
                                 </div>
                                 <div class="form-group">
-                                    <label for="hemocentro-numero">Numero</label>
-                                    <input type="text" class="form-control" id="hemocentro-numero" name="hemocentro-numero">
+                                    <label for="hemocentro-numero">Número <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control validacao" data-nome="Número" id="hemocentro-numero" name="hemocentro-numero">
                                 </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-danger col-lg-2">Cancelar</button>
-                                <button type="submit" class="btn btn-primary col-lg-2 col-lg-offset-2">Cadastrar</button>
+                                <button type="button" id="hemocentro-cadastro" class="btn btn-primary col-lg-2 col-lg-offset-2">Cadastrar</button>
                             </div>
                         </form>
                     </div>

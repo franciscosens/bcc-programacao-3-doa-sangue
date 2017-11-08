@@ -102,21 +102,21 @@
                     <form role="form">
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="doador-nome">Nome</label>
-                                <input type="text" class="form-control" id="doador-nome" name="doador-nome">
+                                <label for="doador-nome">Nome <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control validacao" data-nome="Nome" id="doador-nome" name="doador-nome">
                             </div>
                             <div class="form-group">
-                                <label for="doador-sobrenome">Sobrenome</label>
-                                <input type="text" class="form-control" id="doador-sobrenome" name="doador-sobrenome">
+                                <label for="doador-sobrenome">Sobrenome <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control validacao" data-nome="Sobrenome" id="doador-sobrenome" name="doador-sobrenome">
                             </div>
                             <div class="form-group">
-                                <label for="doador-hemocentro">Hemocentro</label>
-                                <select name="doador-hemocentro" class="form-control" id="doador-hemocentro">
+                                <label for="doador-hemocentro">Hemocentro <span class="text-danger">*</span></label>
+                                <select name="doador-hemocentro" class="form-control validacao" data-nome="Hemocentro" id="doador-hemocentro">
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="doador-tipo-sanguineo">Tipo Sanguíneo</label>
-                                <select name="doador-tipo-sanguineo" class="form-control" id="doador-tipo-sanguineo">
+                                <label for="doador-tipo-sanguineo">Tipo Sanguíneo <span class="text-danger">*</span></label>
+                                <select name="doador-tipo-sanguineo" class="form-control validacao" data-nome="Tipo Sanguíneo" id="doador-tipo-sanguineo">
                                     <option disabled="disabled" selected="selected"></option>
                                     <option value="1">A</option>
                                     <option value="2">B</option>
@@ -125,29 +125,29 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="doador-fator-rh">Fator RH</label>
-                                <select name="doador-fator-rh" class="form-control" id="doador-fator-rh">
+                                <label for="doador-fator-rh">Fator RH <span class="text-danger">*</span></label>
+                                <select name="doador-fator-rh" class="form-control validacao" data-nome="Fator RH" id="doador-fator-rh">
                                     <option disabled="disabled" selected="selected"></option>
                                     <option value="true">Positivo</option>
                                     <option value="false">Negativo</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="doador-data-nascimento">Data de Nascimento:</label>
+                                <label for="doador-data-nascimento">Data de Nascimento <span class="text-danger">*</span></label>
                                 <div class="input-group">
                                       <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                       </div>
-                                      <input type="text" class="form-control data-nascimento"  id="doador-data-nascimento" name="doador-data-nascimento">
+                                      <input type="text" class="form-control data-nascimento validacao" data-nome="Data Nascimento" id="doador-data-nascimento" name="doador-data-nascimento">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="doador-peso">Peso</label>
-                                <input type="text" class="form-control" id="doador-peso" name="doador-peso">
+                                <label for="doador-peso">Peso <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control validacao" data-nome="Peso" id="doador-peso" name="doador-peso">
                             </div>
                             <div class="form-group">
-                                <label for="doador-altura">Altura</label>
-                                <input type="text" class="form-control" id="doador-altura" name="doador-altura">
+                                <label for="doador-altura">Altura <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control validacao" data-nome="Altura" id="doador-altura" name="doador-altura">
                             </div>
                         </div>
                         <!-- /.box-body -->

@@ -23,18 +23,18 @@ $(function () {
                 },
                 "columns": [
                     {
-                        "title": "Doador",
+                        "title": "Hemocentro",
                         "name": "Doador",
                         formatter: function formatter(value, option, rowData) {
-                            return rowData.Doador.NomeCompleto;
+                            return "<a class='text-black' href=\"hemocentro_editar.html?id=" + rowData.Doador.Hemocentro.Id + "\">" +rowData.Doador.Hemocentro.Nome + "</a>";
                         },
                         "type": "object"
                     },
                     {
-                        "title": "Hemocentro",
+                        "title": "Doador",
                         "name": "Doador",
                         formatter: function formatter(value, option, rowData) {
-                            return rowData.Doador.Hemocentro.Nome;
+                            return "<a class='text-black' href=\"doador_editar.html?id=" + rowData.Doador.Id + "\">" +rowData.Doador.NomeCompleto + "</a>";
                         },
                         "type": "object"
                     },
@@ -47,10 +47,10 @@ $(function () {
                         "type": "object"
                     },
                     {
-                        "name": "Litros",
+                        "name": "Quantidade",
                         "title": "ML",
                         "formatter" : function formatter(value, option, rowData) {
-                            return value * 100 + " ml";
+                            return value + " ml";
                         },
                     },
                     {

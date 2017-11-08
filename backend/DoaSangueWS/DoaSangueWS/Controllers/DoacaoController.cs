@@ -42,8 +42,7 @@ namespace DoaSangueWS.Controllers
         {
             try
             {
-                doacaoBLL.Insert(item);
-                return Request.CreateResponse(HttpStatusCode.OK, "Doação incluida com sucesso");
+                return Request.CreateResponse(HttpStatusCode.OK, doacaoBLL.Insert(item));
             }
             catch (Exception ex)
             {

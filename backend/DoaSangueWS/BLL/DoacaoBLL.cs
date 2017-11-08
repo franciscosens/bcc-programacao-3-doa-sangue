@@ -59,13 +59,17 @@ namespace BLL
             }
 
 
-            if (item.Litros == 0)
+            if (item.Quantidade == 0)
             {
-                AddError("Quantidade de Litros deve ser informado.");
+                AddError("Quantidade deve ser informada.");
             }
-            else if (item.Litros < 0)
+            else if (item.Quantidade < 0)
             {
-                AddError("Quantidade de Litros não pode ser negativo.");
+                AddError("Quantidade não pode ser negativa.");
+            } 
+            else if(item.Quantidade > 500)
+            {
+                AddError("Quantidade não pode ser maior que 500 ml.");
             }
 
             return base.HasErrors();

@@ -105,6 +105,7 @@ namespace DTO
         {
             SqlCommand command = conexao.GetCommand();
             command.CommandText = @"INSERT INTO hemocentros (bairro, cep, cidade, complemento, descricao, estado, logradouro, nome, numero, data_criacao)
+                                    OUTPUT INSERTED.ID
                                     VALUES (@BAIRRO, @CEP, @CIDADE, @COMPLEMENTO, @DESCRICAO, @ESTADO, @LOGRADOURO, @NOME, @NUMERO, @DATA_CRIACAO)";
             command.Parameters.AddWithValue("@BAIRRO", item.Bairro);
             command.Parameters.AddWithValue("@CEP", item.CEP);
@@ -116,7 +117,7 @@ namespace DTO
             command.Parameters.AddWithValue("@NOME", item.Nome);
             command.Parameters.AddWithValue("@NUMERO", item.Numero);
             command.Parameters.AddWithValue("@DATA_CRIACAO", DateTime.Now);
-            return command.ExecuteNonQuery();
+            return (int)command.ExecuteScalar();
         }
 
         public int Update(Hemocentro item)
