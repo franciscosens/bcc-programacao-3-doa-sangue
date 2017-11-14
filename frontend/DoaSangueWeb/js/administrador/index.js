@@ -40,7 +40,7 @@ $(function () {
                         "title": "Ações",
                         "sortable": false,
                         "formatter" : function formatter(value, option, rowData) {
-                            return '<a href="admin_editar.html?id=' + rowData.Id + '"><i class="fa fa-pencil"></i></a>';
+                            return '<a href="administrador_editar.html?id=' + rowData.Id + '"><i class="fa fa-pencil"></i></a>';
                         }
                     }
                 ],

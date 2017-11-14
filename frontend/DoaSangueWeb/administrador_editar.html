@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DoaSangue - Doador Editar</title>
+    <title>DoaSangue - Editar Administrador</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -88,7 +88,7 @@
             <ol class="breadcrumb ml-10">
                 <li><a href="index.html"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li><a href="doador.html"> Doadores</a></li>
-                <li class="active"><a href="doador_cadastro.html"> Cadastro</a></li>
+                <li class="active"><a href="administrador_cadastro.html"> Cadastro</a></li>
             </ol>
         </section>
         <!-- Main content -->
@@ -97,89 +97,51 @@
                 <div class="col-md-6 p-0">
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Edição de Doador</h3>
+                            <h3 class="box-title">Edição de Administrador</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
                         <form role="form">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="doador-nome">Nome <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control validacao" data-nome="Nome" id="doador-nome" name="doador-nome">
+                                    <label for="administrador-nome">Nome <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control validacao" data-nome="Nome" id="administrador-nome" name="administrador-nome">
                                 </div>
                                 <div class="form-group">
-                                    <label for="doador-sobrenome">Sobrenome <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control validacao" data-nome="Sobrenome" id="doador-sobrenome" name="doador-sobrenome">
-                                </div>
-                                <div class="form-group">
-                                    <label for="doador-hemocentro">Hemocentro <span class="text-danger">*</span></label>
-                                    <select name="doador-hemocentro" class="form-control validacao" data-nome="Hemocentro" id="doador-hemocentro">
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="doador-tipo-sanguineo">Tipo Sanguíneo <span class="text-danger">*</span></label>
-                                    <select name="doador-tipo-sanguineo" class="form-control validacao" data-nome="Tipo Sanguíneo" id="doador-tipo-sanguineo">
-                                        <option disabled="disabled" selected="selected"></option>
-                                        <option value="1">A</option>
-                                        <option value="2">B</option>
-                                        <option value="3">AB</option>
-                                        <option value="4">O</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="doador-fator-rh">Fator RH <span class="text-danger">*</span></label>
-                                    <select name="doador-fator-rh" class="form-control validacao" data-nome="Fator RH" id="doador-fator-rh">
-                                        <option disabled="disabled" selected="selected"></option>
-                                        <option value="true">Positivo</option>
-                                        <option value="false">Negativo</option>
-                                    </select>
+                                    <label for="administrador-sobrenome">Sobrenome <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control validacao" data-nome="Sobrenome" id="administrador-sobrenome" name="administrador-sobrenome">
                                 </div>
                                 <div class="form-group">
                                     <label for="doador-data-nascimento">Data de Nascimento <span class="text-danger">*</span></label>
                                     <div class="input-group">
-                                          <div class="input-group-addon">
+                                        <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
-                                          </div>
-                                          <input type="text" class="form-control data-nascimento validacao" data-nome="Data Nascimento"  id="doador-data-nascimento" name="doador-data-nascimento">
+                                        </div>
+                                        <input type="text" class="form-control data-nascimento validacao" data-nome="Data Nascimento"  id="doador-data-nascimento" name="doador-data-nascimento">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="doador-peso">Peso <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control validacao" data-nome="Peso" id="doador-peso" name="doador-peso">
+                                    <label for="administrador-login">Login <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control validacao" data-nome="Sobrenome" id="administrador-login" name="administrador-login">
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="doador-altura">Altura <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control validacao" data-nome="Altura" id="doador-altura" name="doador-altura">
+                                    <label for="administrador-privilegio">Tipo Sanguíneo <span class="text-danger">*</span></label>
+                                    <select name="administrador-privilegio" class="form-control validacao" data-nome=Privilégio" id="administrador-privilegio">
+                                        <option disabled="disabled" selected="selected"></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
                                 </div>
                             </div>
                             <!-- /.box-body -->
 
                             <div class="box-footer">
                                 <a href="#" class="btn btn-success col-lg-3"><i class="fa fa-arrow-left"></i> Voltar</a>
-                                <a href="#" id="doador-excluir" class="btn btn-danger col-lg-3 col-lg-offset-1"><i class="fa fa-trash"></i> Excluír</a>
-                                <a href="#" id="doador-cadastro" class="btn btn-primary col-lg-3 col-lg-offset-1"><i class="fa fa-floppy-o"></i> Cadastrar</a>
+                                <a href="#" id="administrador-excluir" class="btn btn-danger col-lg-3 col-lg-offset-1"><i class="fa fa-trash"></i> Excluír</a>
+                                <a href="#" id="administrador-cadastro" class="btn btn-primary col-lg-3 col-lg-offset-1"><i class="fa fa-floppy-o"></i> Cadastrar</a>
                             </div>
                         </form>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="box">
-                        <div class="box-header with-border">
-                            <h3 class="box-title col-md-8">Lista de Doações</h3>
-
-                        </div>
-                        <div class="box-body">
-                        <div class="row">
-                            <div class="col-md-2 col-sm-6 col-sm-offset-6 col-lg-5 col-lg-offset-7 col-md-offset-10">
-                                <a href="#" class="btn btn-block btn-primary" data-toggle="modal" data-target="#modal-nova-doacao"><i class="fa fa-plus"></i> Nova Doação</a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <table class="table table-doacoes"></table>
-                            </div>
-                        </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -216,35 +178,6 @@
 
 </div>
 
-<div class="modal modal-info fade" id="modal-nova-doacao">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Cadastro de Doação</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="doacao-quantidade">Quantidade <span class="text-danger">*</span></label>
-                    <input class="form-control" id="doacao-quantidade" name="doacao-quantidade">
-                </div>
-                <div class="form-group">
-                    <label for="doacao-atendente">Atendente <span class="text-danger">*</span></label>
-                    <input class="form-control" id="doacao-atendente" name="doacao-atendente">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-                <button type="button" id="doacao-cadastrar" class="btn btn-outline">Cadastrar</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
 <script src="assets/jquery/dist/jquery.min.js"></script>
 <script src="js/utils.js"></script>
 <script src="js/alert.js"></script>
@@ -256,7 +189,7 @@
 <script src="assets/momentjs/moment.js"></script>
 <script src="assets/footable/js/footable.min.js"></script>
 <script src="base/js/adminlte.min.js"></script>
-<script src="js/doador/editar.js"></script>
+<script src="js/administrador/editar.js"></script>
 
 </body>
 </html>

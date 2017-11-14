@@ -1,14 +1,12 @@
 $(function () {
 
     $id = $.getParameterByName("id", window.location);
-    $hemocentro = $("#doador-hemocentro");
-    $nome = ("#doador-nome");
-    $sobrenome = ("#doador-sobrenome");
-    $peso = ("#doador-peso");
-    $altura = ("#doador-altura");
-    $dataNascimento = ("#doador-data-nascimento");
-    $tipoSanguineo = ("#doador-tipo-sanguineo");
-    $fatorRH = ("#doador-fator-rh");
+    $nome = ("#administrador-nome");
+    $sobrenome = ("#administrador-sobrenome");
+    $login = ("#administrador-login");
+    $senha = ("#administrador-senha");
+    $dataNascimento = ("#administrador-data-nascimento");
+    $privilegio = ("#administrador-privilegio");
 
     //Datemask dd/mm/yyyy
     $('.data-nascimento').inputmask('dd/mm/yyyy', {'placeholder': 'dd/mm/aaaa'});
@@ -19,20 +17,18 @@ $(function () {
         }
 
         $.ajax({
-            url: "http://localhost:52378/doador",
+            url: "http://localhost:52378/usuario",
             type: "POST",
             data: {
-                "idHemocentro": $($hemocentro).val(),
                 "nome": $($nome).val(),
                 "sobrenome": $($sobrenome).val(),
-                "peso": $($peso).val(),
-                "altura": $($altura).val(),
-                "dataNascimento": $($dataNascimento).val(),
-                "tipoSanguineo": $($tipoSanguineo).val(),
-                "fatorRH": $($fatorRH).val()
+                "login": $($login).val(),
+                "senha": $($senha).val(),
+                "privilegio": $($privilegio).val(),
+                "dataNascimento": $($dataNascimento).val()
             },
             success: function (data) {
-                window.location.replace("doador_editar.html?id=" + data);
+                window.location.replace("administrador_editar.html?id=" + data);
             },
             error: function (request, status, error) {
                 if (request.status === 400) {

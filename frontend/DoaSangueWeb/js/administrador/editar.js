@@ -1,38 +1,19 @@
 $(function () {
 
     $id = $.getParameterByName("id", window.location);
-    $hemocentro = $("#doador-hemocentro");
-    $nome = ("#doador-nome");
-    $sobrenome = ("#doador-sobrenome");
-    $peso = ("#doador-peso");
-    $altura = ("#doador-altura");
-    $dataNascimento = ("#doador-data-nascimento");
-    $tipoSanguineo = ("#doador-tipo-sanguineo");
-    $fatorRH = ("#doador-fator-rh");
+    $nome = ("#administrador-nome");
+    $sobrenome = ("#administrador-sobrenome");
+    $login = ("#administrador-login");
+    $senha = ("#administrador-senha");
+    $dataNascimento = ("#administrador-data-nascimento");
+    $privilegio = ("#administrador-privilegio");
 
 
     //Datemask dd/mm/yyyy
     $('.data-nascimento').inputmask('dd/mm/yyyy', {'placeholder': 'dd/mm/aaaa'});
 
-    $hemocentro.attr("disabled", "disable");
     $.ajax({
-        url: "http://localhost:52378/hemocentro",
-        type: "GET",
-        error: function (data) {
-            alert("Não foi possível se conectar ao servidor");
-            location.reload();
-        },
-        success: function (data) {
-            $hemocentro.append('<option disabled="disabled" selected="selected"></option>');
-            $.each(data, function (i, item) {
-                $hemocentro.append($('<option>', {value: item.Id, text: item.Nome}));
-            });
-            $hemocentro.removeAttr("disabled");
-        }
-    });
-
-    $.ajax({
-        url: "http://localhost:52378/doador/" + $id,
+        url: "http://localhost:52378/usuario/" + $id,
         type: "GET",
         error: function (data) {
             alert("Não foi possível se conectar ao servidor");
@@ -41,55 +22,14 @@ $(function () {
         success: function (data) {
             $($nome).val(data.Nome);
             $($sobrenome).val(data.Sobrenome);
-            $($peso).val(data.Peso);
-            $($altura).val(data.Altura);
-            $($tipoSanguineo).val(data.TipoSanguineo);
-            $($hemocentro).val(data.IdHemocentro);
-            $('#doador-fator-rh option[value=' + data.FatorRH + ']').prop('selected', true);
+            $($login).val(data.Login);
+            $('#administrador-privilegio option[value=' + data.Privilegio + ']').prop('selected', true);
             $($dataNascimento).val($.formatarDataPadraoBR(data.DataNascimento));
-
-            ft = FooTable.init(".table-doacoes", {
-                "paging": {
-                    "enabled": true,
-                    "size": 10,
-                    "position": "right",
-                    "countFormat": "{CP}ª página de {TP} páginas"
-                },
-                "columns": [
-                    {
-                        "name": "DataCriacao",
-                        "title": "Data",
-                        "formatter" : function formatter(value, option, rowData) {
-                            return $.formatarDataHoraPadraoBR(value);
-                        },
-                        "sortable": false
-                    },
-                    {
-                        "title": "Quantidade",
-                        "name": "Quantidade",
-                        "formatter": function formatter(value, option, rowData) {
-                            return value + " ml";
-                        }
-                    },
-                    {
-                        "title": "Atendente",
-                        "name": "Atendente"
-                    },
-                    {
-                        "name": "StatusExtenso",
-                        "title": "Status"
-                    }
-
-                ],
-                "rows": data.Doacoes
-            })
-
-
         }
     });
 
 
-    $("#doador-cadastro").on("click", function () {
+    $("#administrador-cadastro").on("click", function () {
 
         if(!$.validacaoFormulario()){
             return;
@@ -97,18 +37,15 @@ $(function () {
 
         // TODO validações dos campos antes de submitar o form
         $.ajax({
-            url: "http://localhost:52378/doador",
+            url: "http://localhost:52378/usuario",
             type: "PUT",
             data: {
-                "id": $id,
-                "idHemocentro": $($hemocentro).val(),
                 "nome": $($nome).val(),
                 "sobrenome": $($sobrenome).val(),
-                "peso": $($peso).val(),
-                "altura": $($altura).val(),
-                "dataNascimento": $($dataNascimento).val(),
-                "tipoSanguineo": $($tipoSanguineo).val(),
-                "fatorRH": $($fatorRH).val()
+                "login": $($login).val(),
+                "senha": $($senha).val(),
+                "privilegio": $($privilegio).val(),
+                "dataNascimento": $($dataNascimento).val()
             },
             success: function (data) {
                 $.alertSuccess("Doador alterado com sucesso");
@@ -119,30 +56,6 @@ $(function () {
                 }
             }
         });
-    });
-
-    $("#doacao-cadastrar").on("click", function () {
-        $campoQuantidade = $("#doacao-quantidade");
-        $campoAtendente = $("#doacao-atendente");
-        // TODO validações dos campos antes de submitar o form
-        $.ajax({
-            url: "http://localhost:52378/doacao",
-            type: "POST",
-            data : {
-                "idDoador": $id,
-                "quantidade": $campoQuantidade.val(),
-                "atendente": $campoAtendente.val()
-            },
-            success: function(data){
-                window.location.replace("doador_editar.html?id=" + $id);
-            },
-            error: function(request, status, error){
-                if(request.status === 400){
-                    $.criarMensagensValidacao(request.responseText);
-                }
-            }
-        })
-
     });
 
 
