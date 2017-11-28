@@ -16,8 +16,8 @@ namespace DoaSangueWS.Controllers
 
         DoadorBLL doadorBLL = new DoadorBLL();
 
-        [HttpDelete]
-        [Route("doador/{id}")]
+        [HttpPost]
+        [Route("doador/delete/{id}")]
         public HttpResponseMessage Delete(int id)
         {
             doadorBLL.Delete(id);
@@ -53,8 +53,8 @@ namespace DoaSangueWS.Controllers
             }
         }
 
-        [HttpPut]
-        [Route("doador")]
+        [HttpPost]
+        [Route("doador/update")]
         public HttpResponseMessage Update([FromBody]Doador item)
         {
             try

@@ -94,11 +94,9 @@ $(function () {
         if(!$.validacaoFormulario()){
             return;
         }
-
-        // TODO validações dos campos antes de submitar o form
         $.ajax({
-            url: "http://localhost:52378/doador",
-            type: "PUT",
+            url: "http://localhost:52378/doador/update",
+            type: "POST",
             data: {
                 "id": $id,
                 "idHemocentro": $($hemocentro).val(),
@@ -145,5 +143,21 @@ $(function () {
 
     });
 
+
+
+    $("#doador-excluir").on("click", function () {
+        $.ajax({
+            "url": "http://localhost:52378/doador/delete/" + $id,
+            "type": "POST",
+            success: function (data) {
+                window.location.replace("doador.html");
+            },
+            error: function (request, status, error) {
+                if (request.status === 400) {
+                    $.criarMensagensValidacao(request.responseText);
+                }
+            }
+        })
+    });
 
 });

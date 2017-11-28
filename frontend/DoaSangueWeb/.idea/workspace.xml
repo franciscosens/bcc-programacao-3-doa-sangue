@@ -13,62 +13,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="administrador_cadastro.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/administrador_cadastro.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="141" column="77" lean-forward="true" selection-start-line="141" selection-start-column="77" selection-end-line="141" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="administrador.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/administrador.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="77" column="109" lean-forward="false" selection-start-line="77" selection-start-column="109" selection-end-line="77" selection-end-column="109" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/administrador/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="42" column="105" lean-forward="true" selection-start-line="42" selection-start-column="105" selection-end-line="42" selection-end-column="105" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="doador_cadastro.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doador_cadastro.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="142" column="34" lean-forward="true" selection-start-line="134" selection-start-column="28" selection-end-line="142" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cadastro.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/administrador/cadastro.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="58" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="27" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="editar.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/administrador/editar.js">
+        <entry file="file://$PROJECT_DIR$/js/hemocentro/editar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1044">
-              <caret line="58" column="7" lean-forward="false" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+            <state relative-caret-position="763">
+              <caret line="74" column="7" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="74" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hemocentro_editar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hemocentro_editar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="doador_editar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doador_editar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="449">
+              <caret line="166" column="32" lean-forward="true" selection-start-line="166" selection-start-column="32" selection-end-line="166" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -77,18 +47,8 @@
       <file leaf-file-name="editar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/doador/editar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2214">
-              <caret line="123" column="52" lean-forward="true" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="administrador_editar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/administrador_editar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="119" column="154" lean-forward="false" selection-start-line="119" selection-start-column="154" selection-end-line="119" selection-end-column="154" />
+            <state relative-caret-position="2261">
+              <caret line="133" column="36" lean-forward="true" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -106,8 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;link rel=&quot;stylesheet&quot; href=&quot;base/css/utils.css&quot;&gt;</find>
-      <find>table</find>
       <find>&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-dashboard&quot;&gt;&lt;/i&gt; Home&lt;/a&gt;&lt;/li&gt;</find>
       <find>https://adminlte.io/docs</find>
       <find>admin</find>
@@ -136,6 +94,8 @@
       <find>admin_</find>
       <find>editar</find>
       <find>-cadastro</find>
+      <find>Exclu</find>
+      <find>id</find>
     </findStrings>
     <replaceStrings>
       <replace>img/icone-doacao-sangue.png</replace>
@@ -179,11 +139,8 @@
         <option value="$PROJECT_DIR$/doador_cadastro.html" />
         <option value="$PROJECT_DIR$/hemocentro_cadastro.html" />
         <option value="$PROJECT_DIR$/js/hemocentro/cadastro.js" />
-        <option value="$PROJECT_DIR$/hemocentro_editar.html" />
-        <option value="$PROJECT_DIR$/js/hemocentro/editar.js" />
         <option value="$PROJECT_DIR$/doador_editar.html" />
         <option value="$PROJECT_DIR$/js/doador/cadastro.js" />
-        <option value="$PROJECT_DIR$/js/doador/editar.js" />
         <option value="$PROJECT_DIR$/js/administrador/login.js" />
         <option value="$PROJECT_DIR$/js/utils.js" />
         <option value="$PROJECT_DIR$/js/doacao/index.js" />
@@ -193,6 +150,9 @@
         <option value="$PROJECT_DIR$/js/administrador/cadastro.js" />
         <option value="$PROJECT_DIR$/js/administrador/editar.js" />
         <option value="$PROJECT_DIR$/administrador_editar.html" />
+        <option value="$PROJECT_DIR$/hemocentro_editar.html" />
+        <option value="$PROJECT_DIR$/js/hemocentro/editar.js" />
+        <option value="$PROJECT_DIR$/js/doador/editar.js" />
       </list>
     </option>
   </component>
@@ -222,6 +182,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -246,12 +208,16 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="doador" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DoaSangueWeb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DoaSangueWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="hemocentro" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,16 +290,19 @@
       <workItem from="1510088078437" duration="9766000" />
       <workItem from="1510160431275" duration="2202000" />
       <workItem from="1510175691818" duration="3547000" />
+      <workItem from="1511307762244" duration="908000" />
+      <workItem from="1511816314705" duration="3068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97565000" />
+    <option name="totallyTimeSpent" value="101541000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20600632" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -539,31 +508,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hemocentro_cadastro.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="42" lean-forward="false" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/hemocentro/cadastro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="76" column="11" lean-forward="false" selection-start-line="55" selection-start-column="7" selection-end-line="76" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hemocentro_editar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2839">
-          <caret line="167" column="75" lean-forward="false" selection-start-line="167" selection-start-column="75" selection-end-line="167" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/hemocentro/editar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -582,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doador_editar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="248" column="35" lean-forward="true" selection-start-line="248" selection-start-column="35" selection-end-line="248" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/doacao/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -596,74 +537,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/administrador/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="105" lean-forward="true" selection-start-line="42" selection-start-column="105" selection-end-line="42" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/doador/cadastro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/administrador/index.js" />
+    <entry file="file://$PROJECT_DIR$/js/administrador/cadastro.js" />
+    <entry file="file://$PROJECT_DIR$/administrador_editar.html" />
+    <entry file="file://$PROJECT_DIR$/js/administrador/editar.js" />
     <entry file="file://$PROJECT_DIR$/doador_cadastro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="142" column="34" lean-forward="true" selection-start-line="134" selection-start-column="28" selection-end-line="142" selection-end-column="34" />
+        <state relative-caret-position="848">
+          <caret line="142" column="34" lean-forward="false" selection-start-line="134" selection-start-column="28" selection-end-line="142" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/administrador.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="77" column="109" lean-forward="false" selection-start-line="77" selection-start-column="109" selection-end-line="77" selection-end-column="109" />
+        <state relative-caret-position="780">
+          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/administrador_cadastro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="141" column="77" lean-forward="true" selection-start-line="141" selection-start-column="77" selection-end-line="141" selection-end-column="78" />
+        <state relative-caret-position="0">
+          <caret line="141" column="77" lean-forward="false" selection-start-line="141" selection-start-column="77" selection-end-line="141" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/administrador/cadastro.js">
+    <entry file="file://$PROJECT_DIR$/hemocentro_cadastro.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="58" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="27" selection-end-column="58" />
+        <state relative-caret-position="871">
+          <caret line="101" column="42" lean-forward="false" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/administrador_editar.html">
+    <entry file="file://$PROJECT_DIR$/doador_editar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="119" column="154" lean-forward="false" selection-start-line="119" selection-start-column="154" selection-end-line="119" selection-end-column="154" />
+        <state relative-caret-position="449">
+          <caret line="166" column="32" lean-forward="true" selection-start-line="166" selection-start-column="32" selection-end-line="166" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/administrador/editar.js">
+    <entry file="file://$PROJECT_DIR$/js/doador/cadastro.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="58" column="7" lean-forward="false" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        <state relative-caret-position="746">
+          <caret line="51" column="73" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hemocentro_editar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/hemocentro/editar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="74" column="7" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="74" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/doador/editar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2214">
-          <caret line="123" column="52" lean-forward="true" selection-start-line="123" selection-start-column="52" selection-end-line="123" selection-end-column="52" />
+        <state relative-caret-position="2261">
+          <caret line="133" column="36" lean-forward="true" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
           <folding />
         </state>
       </provider>

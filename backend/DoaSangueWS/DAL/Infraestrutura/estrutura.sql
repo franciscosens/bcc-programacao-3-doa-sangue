@@ -24,7 +24,7 @@ CREATE TABLE doadores(
 	id INTEGER PRIMARY KEY IDENTITY(1, 1),
 
 	id_hemocentro INTEGER NOT NULL,
-	FOREIGN KEY(id_hemocentro) REFERENCES hemocentros(id),
+	FOREIGN KEY(id_hemocentro) REFERENCES hemocentros(id) ON DELETE CASCADE,
 
 	nome VARCHAR(100) NOT NULL,
 	sobrenome VARCHAR(100) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE doacoes(
 	id INTEGER PRIMARY KEY IDENTITY(1, 1),
 
 	id_doador INTEGER NOT NULL,
-	FOREIGN KEY(id_doador) REFERENCES doadores(id),
+	FOREIGN KEY(id_doador) REFERENCES doadores(id) ON DELETE CASCADE,
 
 	status INT NOT NULL,
 	atendente VARCHAR(100) NOT NULL,
@@ -98,7 +98,7 @@ VALUES
 (4, 'Nicolas', 'Pedro Castro', '1976-11-14 21:54:48', 4, 1, 97.400, 1.84, '2017-11-01 22:54:12'),
 (5, 'Nicole', 'Yasmin Jennifer Costa', '1995-10-27 21:54:48', 2, 1, 57.000, 1.61, '2017-11-01 22:54:12'),
 (6, 'Emily', 'Souza', '1965-09-16 21:54:48', 3, 0, 90.300, 1.64, '2017-11-01 22:54:12'),
-(7, 'Julio', 'Fernandes', '1978-02-07 21:54:48', 1, 1, 90.600, 1.84, '2017-11-01 22:54:12'),
+(6, 'Julio', 'Fernandes', '1978-02-07 21:54:48', 1, 1, 90.600, 1.84, '2017-11-01 22:54:12'),
 (3, 'Diogo', 'Iago Moura', '1986-05-29 21:54:48', 4, 1, 73.000, 1.74, '2017-11-01 22:54:12'),
 (1, 'Bruna', 'Barros', '1990-10-05 21:54:48', 3, 0, 73.300, 1.78, '2017-11-01 22:54:12');
 

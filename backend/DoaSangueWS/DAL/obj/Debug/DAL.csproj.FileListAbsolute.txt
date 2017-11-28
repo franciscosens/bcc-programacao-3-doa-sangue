@@ -6,14 +6,6 @@ C:\Users\LSens\source\repos\DoaSangueWS\DAL\obj\Debug\DAL.csproj.CoreCompileInpu
 C:\Users\LSens\source\repos\DoaSangueWS\DAL\obj\Debug\DAL.dll
 C:\Users\LSens\source\repos\DoaSangueWS\DAL\obj\Debug\DAL.pdb
 C:\Users\LSens\source\repos\DoaSangueWS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\bin\Debug\DAL.dll
-C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\bin\Debug\DAL.pdb
-C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\bin\Debug\DTO.dll
-C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\bin\Debug\DTO.pdb
-C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
-C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.dll
-C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.pdb
 C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DAL\bin\Debug\DAL.dll
 C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DAL\bin\Debug\DAL.pdb
 C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DAL\bin\Debug\DTO.dll
@@ -22,3 +14,11 @@ C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\D
 C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.dll
 C:\Users\Cão Nuclear Portable\Documents\GitHub\doa-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.pdb
+C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\bin\Debug\DAL.dll
+C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\bin\Debug\DAL.pdb
+C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\bin\Debug\DTO.dll
+C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\bin\Debug\DTO.pdb
+C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.dll
+C:\Users\LSens\source\repos\dao-sangue\backend\DoaSangueWS\DAL\obj\Debug\DAL.pdb

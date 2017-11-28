@@ -13,7 +13,7 @@ namespace DTO.Infraestrutura
 
         public SqlCommand GetCommand()
         {
-            sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Cão Nuclear Portable\Documents\DbDoaSangue.mdf;Integrated Security=True;Connect Timeout=30");
+            sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\LSens\Documents\DbDoaSangue.mdf;Integrated Security=True;Connect Timeout=30");
             sqlConnection.Open();
             SqlCommand command = new SqlCommand();
             command.Connection = sqlConnection;

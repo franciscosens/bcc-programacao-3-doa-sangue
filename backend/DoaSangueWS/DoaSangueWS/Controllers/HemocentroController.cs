@@ -6,15 +6,17 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace DoaSangueWS.Controllers
 {
+    [DisableCors]
     public class HemocentroController: ApiController
     {
         HemocentroBLL hemocentroBLL = new HemocentroBLL();
 
-        [HttpDelete]
-        [Route("hemocentro/{id}")]
+        [HttpPost]
+        [Route("hemocentro/delete/{id}")]
         public HttpResponseMessage Delete(int id)
         {
             hemocentroBLL.Delete(id);
@@ -45,8 +47,8 @@ namespace DoaSangueWS.Controllers
             }
         }
 
-        [HttpPut]
-        [Route("hemocentro/teste")]
+        [HttpPost]
+        [Route("hemocentro/update")]
         public HttpResponseMessage Update([FromBody]Hemocentro item)
         {
             try

@@ -19,7 +19,7 @@ namespace DTO
         public bool Delete(int id)
         {
             SqlCommand command = conexao.GetCommand();
-            command.CommandText = "DELETE FROM doadores WHER id = @ID";
+            command.CommandText = "DELETE FROM doadores WHERE id = @ID";
             command.Parameters.AddWithValue("@ID", id);
             return command.ExecuteNonQuery() == 1;
         }

@@ -35,11 +35,9 @@ $(function () {
             return;
         }
         $.ajax({
-            url: "http://localhost:52378/hemocentro/teste",
-            type: "POST",
-
+            "url": "http://localhost:52378/hemocentro/update",
+            "type": "POST",
             data: {
-                "_method": "PUT",
                 "id": $id,
                 "estado": $($campoEstado).val(),
                 "cidade": $($campoCidade).val(),
@@ -51,7 +49,7 @@ $(function () {
                 "cep": $($campoCEP).val()
             },
             success: function (data) {
-                window.location.replace("hemocentro_editar.html?id=" + data);
+                $.alertSuccess("Hemocentro alterado com sucesso!");
             },
             error: function (request, status, error) {
                 if (request.status === 400) {
@@ -59,6 +57,20 @@ $(function () {
                 }
             }
         });
+    });
 
-    })
+    $("#hemocentro-excluir").on("click", function () {
+        $.ajax({
+            "url": "http://localhost:52378/hemocentro/delete/" + $id,
+            "type": "POST",
+            success: function (data) {
+                window.location.replace("hemocentro.html");
+            },
+            error: function (request, status, error) {
+                if (request.status === 400) {
+                    $.criarMensagensValidacao(request.responseText);
+                }
+            }
+        })
+    });
 });

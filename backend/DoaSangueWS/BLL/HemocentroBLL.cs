@@ -105,8 +105,8 @@ namespace BLL
 
             if (string.IsNullOrWhiteSpace(item.Estado))
                 AddError("Estado deve ser preenchido.");
-            else if (item.Nome.Length != 2)
-                AddError("Nome deve ter no mínimo 2 caracteres e no máximo 2 caracteres.");
+            else if (item.Estado.Length != 2)
+                AddError("Estado deve ter no mínimo 2 caracteres e no máximo 2 caracteres.");
 
             if (string.IsNullOrWhiteSpace(item.Cidade))
                 AddError("Cidade deve ser preenchida.");
