@@ -24,31 +24,30 @@ $(function () {
             $($sobrenome).val(data.Sobrenome);
             $($login).val(data.Login);
             $('#administrador-privilegio option[value=' + data.Privilegio + ']').prop('selected', true);
-            $($dataNascimento).val($.formatarDataPadraoBR(data.DataNascimento));
+            $($dataNascimento).val($.formatarDataFromDataHora("03/04/1995"));
         }
     });
 
 
-    $("#administrador-cadastro").on("click", function () {
+    $("#administrador-editar").on("click", function () {
 
         if(!$.validacaoFormulario()){
             return;
         }
 
-        // TODO validações dos campos antes de submitar o form
         $.ajax({
-            url: "http://localhost:52378/usuario",
-            type: "PUT",
+            url: "http://localhost:52378/usuario/update",
+            type: "POST",
             data: {
+                "id": $id,
                 "nome": $($nome).val(),
                 "sobrenome": $($sobrenome).val(),
-                "login": $($login).val(),
                 "senha": $($senha).val(),
                 "privilegio": $($privilegio).val(),
                 "dataNascimento": $($dataNascimento).val()
             },
             success: function (data) {
-                $.alertSuccess("Doador alterado com sucesso");
+                $.alertSuccess("Admiistrador alterado com sucesso");
             },
             error: function (request, status, error) {
                 if (request.status === 400) {
@@ -56,6 +55,21 @@ $(function () {
                 }
             }
         });
+    });
+
+    $("#administrador-excluir").on("click", function () {
+        $.ajax({
+            "url": "http://localhost:52378/usuario/delete/" + $id,
+            "type": "POST",
+            success: function (data) {
+                window.location.replace("administrador.html");
+            },
+            error: function (request, status, error) {
+                if (request.status === 400) {
+                    $.criarMensagensValidacao(request.responseText);
+                }
+            }
+        })
     });
 
 

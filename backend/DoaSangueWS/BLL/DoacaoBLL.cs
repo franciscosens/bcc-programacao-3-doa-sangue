@@ -78,7 +78,12 @@ namespace BLL
         // TODO implementar validação do update da doação
         public override bool IsValidUpdate(Doacao item)
         {
-            throw new NotImplementedException();
+            if (item.Status <= 0)
+                AddError("Status deve ser informado.");
+            else if (!Enum.IsDefined(typeof(DTO.EStatusDoacao), item.Status))
+                AddError("Status informado não é um valor válido");
+
+            return base.HasErrors();
         }
 
         public int Update(Doacao item)

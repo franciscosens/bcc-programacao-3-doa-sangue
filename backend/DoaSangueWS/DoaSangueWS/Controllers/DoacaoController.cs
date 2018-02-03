@@ -50,8 +50,8 @@ namespace DoaSangueWS.Controllers
             }
         }
 
-        [HttpPut]
-        [Route("doacao/{id}")]
+        [HttpPost]
+        [Route("doacao/update")]
         public HttpResponseMessage Update([FromBody]Doacao item)
         {
             try

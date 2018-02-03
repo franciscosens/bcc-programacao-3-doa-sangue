@@ -67,7 +67,7 @@
                 </div>
                 <div class="pull-left info">
                     <p id="nome-usuario-logado"></p>
-                    <a href="#"><i class="fa fa-user text-success"></i>Editar Profile</a>
+
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
@@ -157,7 +157,7 @@
                             <div class="box-footer">
                                 <a href="#" class="btn btn-success col-lg-3"><i class="fa fa-arrow-left"></i> Voltar</a>
                                 <a href="#" id="doador-excluir" class="btn btn-danger col-lg-3 col-lg-offset-1"><i class="fa fa-trash"></i> Excluír</a>
-                                <a href="#" id="doador-cadastro" class="btn btn-primary col-lg-3 col-lg-offset-1"><i class="fa fa-floppy-o"></i> Cadastrar</a>
+                                <a href="#" id="doador-editar" class="btn btn-primary col-lg-3 col-lg-offset-1"><i class="fa fa-floppy-o"></i> Alterar</a>
                             </div>
                         </form>
                     </div>
@@ -214,6 +214,36 @@
         <p class="alert-descricao"></p>
     </div>
 
+</div>
+
+<div class="modal modal-info fade" id="modal-editar-doacao">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Editar de Doação</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="hidden" id="doacao-id">
+                    <label for="doacao-status">Status <span class="text-danger">*</span></label>
+                    <select name="doacao-status" class="form-control validacao" data-nome="Status" id="doacao-status">
+                        <option value="0">Aguardando Análise</option>
+                        <option value="1">Em Análise</option>
+                        <option value="3">Rejeitado</option>
+                        <option value="2">Aceito</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                <button type="button" id="doacao-editar" class="btn btn-outline">Editar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
 </div>
 
 <div class="modal modal-info fade" id="modal-nova-doacao">

@@ -112,8 +112,8 @@ namespace DoaSangueWS.Controllers
             }
         }
 
-        [HttpPut]
-        [Route("usuario/{id}")]
+        [HttpPost]
+        [Route("usuario/update")]
         public HttpResponseMessage Update([FromBody] Usuario item)
         {
             try
@@ -127,8 +127,8 @@ namespace DoaSangueWS.Controllers
             }
         }
 
-        [HttpDelete]
-        [Route("usuario/{id}")]
+        [HttpPost]
+        [Route("usuario/delete/{id}")]
         public HttpResponseMessage Delete(int id)
         {
             usuarioBLL.Delete(id);

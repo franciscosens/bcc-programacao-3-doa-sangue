@@ -33,7 +33,7 @@ $(function () {
                     $botadLogin.removeAttr("disabled");
                 }
                 if (request.status === 400) {
-                    console.log(request.responseText);
+                    $.alertError(request.responseText);
                 }
             }
         });

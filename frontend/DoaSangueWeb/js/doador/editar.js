@@ -78,18 +78,24 @@ $(function () {
                     {
                         "name": "StatusExtenso",
                         "title": "Status"
-                    }
+                    },
 
+                    {
+                        "name": "Id",
+                        "title": "Ação",
+                        "formatter" : function formatter(value, option, rowData) {
+                            return "<a href=\"#\" class=\"doacao-editar\" data-toggle=\"modal\" data-id=\"" + value + "\"  data-target=\"#modal-editar-doacao\">Editar</a>";
+                        },
+                        "sortable": false
+                    }
                 ],
                 "rows": data.Doacoes
-            })
-
-
+            });
         }
     });
 
 
-    $("#doador-cadastro").on("click", function () {
+    $("#doador-editar").on("click", function () {
 
         if(!$.validacaoFormulario()){
             return;
@@ -119,7 +125,7 @@ $(function () {
         });
     });
 
-    $("#doacao-cadastrar").on("click", function () {
+    $("#doacao-editar").on("click", function () {
         $campoQuantidade = $("#doacao-quantidade");
         $campoAtendente = $("#doacao-atendente");
         // TODO validações dos campos antes de submitar o form
@@ -143,8 +149,6 @@ $(function () {
 
     });
 
-
-
     $("#doador-excluir").on("click", function () {
         $.ajax({
             "url": "http://localhost:52378/doador/delete/" + $id,
@@ -158,6 +162,32 @@ $(function () {
                 }
             }
         })
+    });
+
+    $("table").on("click", ".doacao-editar", function () {
+        console.log($(this).data("id"));
+        $("#doacao-id").val($(this).data("id"));
+    });
+
+    $("#doacao-editar").on("click", function () {
+        $campoStatus = $("#doacao-status");
+        $.ajax({
+            url: "http://localhost:52378/doacao/update",
+            type: "POST",
+            data : {
+                "id": $id,
+                "status": $campoStatus.val()
+            },
+            success: function(data){
+                window.location.replace("doador_editar.html?id=" + $id);
+            },
+            error: function(request, status, error){
+                if(request.status === 400){
+                    $.criarMensagensValidacao(request.responseText);
+                }
+            }
+        })
+
     });
 
 });

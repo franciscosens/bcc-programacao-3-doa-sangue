@@ -10,7 +10,7 @@ $(function () {
     }
 
     $.ajax({
-        url: "http://localhost:52378/usuario/verificarLogin",
+        url: "http://localhost: 52378/usuario/verificarLogin",
         type: "POST",
         data: {
             "login" : $.login,
@@ -20,7 +20,7 @@ $(function () {
             limparSessao();
             window.location.replace("login.html");
         }, success: function () {
-            $("#nome-administrador-logado").html($.nomeCompleto);
+            $("#nome-usuario-logado").html($.nomeCompleto);
             $('input,textarea').attr('autocomplete', 'off');
 
         }
@@ -38,12 +38,15 @@ $(function () {
 
     $.formatarDataHoraPadraoBR = function (dataHora) {
       dataHora = dataHora.split("T");
-      console.log(dataHora);
-
       return $.formatarDataPadraoBR(dataHora[0]) + " " + dataHora[1];
     };
 
-    $("#administrador-logout").on("click", function () {
+    $.formatarDataFromDataHora = function (dataHora) {
+        dataHora = dataHora.split("T");
+        return $.formatarDataPadraoBR(dataHora[0]);
+    }
+
+    $("#usuario-logout").on("click", function () {
         $.ajax({
             url: "http://localhost:52378/usuario/logout",
             type: "POST",
